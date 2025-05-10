@@ -1,0 +1,7 @@
+<mvc:View controllerName="galacticadventurefrontend.controller.Galactic"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="idGalacticPage" title="{i18n>title}">
+        <Title id="idTitle" text=" hello"></Title>
+    </Page>
+</mvc:View>

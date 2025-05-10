@@ -1,0 +1,134 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "galacticadventurefrontend",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.4",
+      "toolsId": "b6e5b2ba-a404-4a58-bbf9-d1d41db6efd4"
+    },
+    "dataSources": {
+      "SpaceService": {
+        "uri": "/space/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.135.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "galacticadventurefrontend.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "SpaceService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode":"Server",
+          "autoExpandSelect":true,
+          "earlyRequests":true,
+          "groupProperties":{
+            "default":{
+              "submit":"Auto"
+            }
+          }
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "galacticadventurefrontend.view",
+        "async": true,
+        "viewPath": "galacticadventurefrontend.view"
+      },
+      "routes": [
+        {
+          "name": "RouteMain",
+          "pattern": ":?query:",
+          "target": [
+            "TargetMain"
+          ]
+        },
+        {
+          "name": "GalacticView",
+          "pattern": "galactic",
+          "target": [
+            "TargetGalactic"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetMain": {
+          "id": "Main",
+          "name": "Main"
+        },
+        "TargetGalactic":{
+          "viewType": "XML",
+          "viewId": "Galactic",
+          "viewName": "Galactic"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "galacticadventurefrontend.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

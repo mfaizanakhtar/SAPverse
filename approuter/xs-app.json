@@ -1,0 +1,29 @@
+{
+    "welcomeFile": "/index.html",
+    "authenticationMethod": "none",
+    "routes": [
+      {
+        "source":"^/resources/(.*)$",
+        "target":"/resources/$1",
+        "authenticationType":"none",
+        "destination":"ui5-app"
+      },
+      {
+        "source":"^/test-resources/(.*)$",
+        "target":"/test-resources/$1",
+        "authenticationType":"none",
+        "destination":"ui5-app"
+      },
+      {
+        "source": "^/space/(.*)$",
+        "target": "/odata/v4/space/$1",
+        "destination": "srv-api",
+        "csrfProtection": false
+      },
+      {
+        "source": "^(/.*)",
+        "localDir": "../galactic-adventure-frontend/webapp/",
+        "authenticationType": "none"
+      }
+    ]
+  }

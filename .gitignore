@@ -1,7 +1,0 @@
-node_modules/
-.env
-default-env.json
-*.log
-.idea/
-.DS_Store
-.vscode/
