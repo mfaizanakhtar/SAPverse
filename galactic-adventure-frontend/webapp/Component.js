@@ -1,26 +1,12 @@
-sap.ui.define([
-    "sap/ui/core/UIComponent",
-    "galacticadventurefrontend/model/models"
-], (UIComponent, models) => {
-    "use strict";
+sap.ui.define(
+    ["sap/fe/core/AppComponent"],
+    function (Component) {
+        "use strict";
 
-    return UIComponent.extend("galacticadventurefrontend.Component", {
-        metadata: {
-            manifest: "json",
-            interfaces: [
-                "sap.ui.core.IAsyncContentCreation"
-            ]
-        },
-
-        init() {
-            // call the base component's init function
-            UIComponent.prototype.init.apply(this, arguments);
-
-            // set the device model
-            this.setModel(models.createDeviceModel(), "device");
-
-            // enable routing
-            this.getRouter().initialize();
-        }
-    });
-});
+        return Component.extend("galacticadventurefrontend.Component", {
+            metadata: {
+                manifest: "json"
+            }
+        });
+    }
+);
