@@ -14,6 +14,16 @@
     "@cap-js/cds-types": "^0.10.0"
   },
   "scripts": {
-    "start": "cds-serve"
-  }
+    "start": "cds-serve",
+    "watch-galactic-adventure-fe": "cds watch --open galactic-adventure-fe/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "features": {
+      "app_annotations": true,
+      "aggregate_annotations": true
+    }
+  },
+  "sapux": [
+    "app/galactic-adventure-fe"
+  ]
 }

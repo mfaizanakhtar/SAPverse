@@ -22,7 +22,7 @@
       },
       {
         "source": "^(/.*)",
-        "localDir": "../galactic-adventure-frontend/webapp/",
+        "localDir": "../galactic-adventure-frontend/dist/",
         "authenticationType": "none"
       }
     ]
