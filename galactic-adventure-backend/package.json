@@ -21,6 +21,27 @@
     "features": {
       "app_annotations": true,
       "aggregate_annotations": true
+    },
+    "requires": {
+      "auth": {
+        "kind": "basic",
+        "users": {
+          "user": {
+            "password": "user",
+            "roles": ["User"],
+            "attr": {
+              "originPlanet": "Mars"
+            }
+          },
+          "admin": {
+            "password": "admin",
+            "roles": ["Admin"],
+            "attr": {
+              "originPlanet": "Earth"
+            }
+          }
+        }
+      }
     }
   },
   "sapux": [

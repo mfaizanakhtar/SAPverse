@@ -1,7 +1,5 @@
 namespace galactic;
 
-using { managed, cuid } from '@sap/cds/common';
-
 entity Department {
   key ID: UUID;
   name: String;
@@ -12,7 +10,7 @@ entity Position {
   title: String;
 }
 
-entity Spacefarer: cuid, managed {
+entity Spacefarer {
   key ID: UUID;
   @Common.Label: 'Name'
   name: String;
@@ -25,9 +23,4 @@ entity Spacefarer: cuid, managed {
 
   department: Association to Department;
   position: Association to Position;
-}
-
-entity Dummy {
-  key ID: UUID;
-  name: String;
 }

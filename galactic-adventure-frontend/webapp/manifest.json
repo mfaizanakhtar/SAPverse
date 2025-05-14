@@ -115,6 +115,10 @@
               "contextPath": "/Spacefarers",
               "variantManagement": "Page",
               "initialLoad": true,
+              "tableType":"AnalyticalTable",
+              "tableSettings":{
+                "width":"100%"
+              },
               "navigation": {
                 "Spacefarers": {
                   "detail": {
@@ -143,8 +147,26 @@
             "settings": {
               "editableHeaderContent": false,
               "createMode": "External",
-              "contextPath": "/Spacefarers"
+              "contextPath": "/Spacefarers",
+              "content":{
+                "header":{
+                  "actions":{
+                    "BackToList":{
+                      "text":"{i18n>backToList}"
+                    }
+                  }
+                }
+              }
             }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ObjectPage.view.ObjectPage": {
+            "controllerName": "galacticadventurefrontend.ext.controller.ObjectPageExtension"
           }
         }
       }
