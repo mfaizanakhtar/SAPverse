@@ -12,10 +12,13 @@ entity Position {
 
 entity Spacefarer {
   key ID: UUID;
+  @Common.Label: 'Name'
   name: String;
   stardustCollection: Integer;
   wormholeNavigationSkill: Integer;
+  @Common.Label: 'Origin Planet'
   originPlanet: String;
+  @Common.Label: 'Spacesuit Color'
   spacesuitColor: String;
 
   department: Association to Department;

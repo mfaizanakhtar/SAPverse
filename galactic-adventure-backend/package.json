@@ -14,6 +14,37 @@
     "@cap-js/cds-types": "^0.10.0"
   },
   "scripts": {
-    "start": "cds-serve"
-  }
+    "start": "cds-serve",
+    "watch-galactic-adventure-fe": "cds watch --open galactic-adventure-fe/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "features": {
+      "app_annotations": true,
+      "aggregate_annotations": true
+    },
+    "requires": {
+      "auth": {
+        "kind": "basic",
+        "users": {
+          "user": {
+            "password": "user",
+            "roles": ["User"],
+            "attr": {
+              "originPlanet": "Mars"
+            }
+          },
+          "admin": {
+            "password": "admin",
+            "roles": ["Admin"],
+            "attr": {
+              "originPlanet": "Earth"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sapux": [
+    "app/galactic-adventure-fe"
+  ]
 }

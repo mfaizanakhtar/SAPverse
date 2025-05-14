@@ -11,15 +11,26 @@
     "description": "{{appDescription}}",
     "resources": "resources.json",
     "sourceTemplate": {
-      "id": "@sap/generator-fiori:basic",
+      "id": "@sap/generator-fiori:lrop",
       "version": "1.17.4",
-      "toolsId": "b6e5b2ba-a404-4a58-bbf9-d1d41db6efd4"
+      "toolsId": "b6581625-4f10-4290-9d5b-51848848a99b"
     },
     "dataSources": {
-      "SpaceService": {
-        "uri": "/space/",
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/odata/v4/space/",
         "type": "OData",
         "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
           "odataVersion": "4.0"
         }
       }
@@ -47,7 +58,9 @@
       "minUI5Version": "1.135.0",
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+        "sap.fe.templates": {},
+        "sap.ui.table": {}
       }
     },
     "contentDensities": {
@@ -62,73 +75,105 @@
         }
       },
       "": {
-        "dataSource": "SpaceService",
+        "dataSource": "mainService",
         "preload": true,
         "settings": {
-          "synchronizationMode": "None",
-          "operationMode":"Server",
-          "autoExpandSelect":true,
-          "earlyRequests":true,
-          "groupProperties":{
-            "default":{
-              "submit":"Auto"
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "SpacefarersList",
+          "target": "SpacefarersList"
+        },
+        {
+          "pattern": "Spacefarers({key}):?query:",
+          "name": "SpacefarersObjectPage",
+          "target": "SpacefarersObjectPage"
+        }
+      ],
+      "targets": {
+        "SpacefarersList": {
+          "type": "Component",
+          "id": "SpacefarersList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/Spacefarers",
+              "variantManagement": "Page",
+              "initialLoad": true,
+              "tableType":"AnalyticalTable",
+              "tableSettings":{
+                "width":"100%"
+              },
+              "navigation": {
+                "Spacefarers": {
+                  "detail": {
+                    "route": "SpacefarersObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "actions": {
+                    "create": {
+                      "enabled": true,
+                      "press": "cmd:Create"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "SpacefarersObjectPage": {
+          "type": "Component",
+          "id": "SpacefarersObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "createMode": "External",
+              "contextPath": "/Spacefarers",
+              "content":{
+                "header":{
+                  "actions":{
+                    "BackToList":{
+                      "text":"{i18n>backToList}"
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
     },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "transition": "slide",
-        "type": "View",
-        "viewType": "XML",
-        "path": "galacticadventurefrontend.view",
-        "async": true,
-        "viewPath": "galacticadventurefrontend.view"
-      },
-      "routes": [
-        {
-          "name": "RouteMain",
-          "pattern": ":?query:",
-          "target": [
-            "TargetMain"
-          ]
-        },
-        {
-          "name": "GalacticView",
-          "pattern": "galactic",
-          "target": [
-            "TargetGalactic"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetMain": {
-          "id": "Main",
-          "name": "Main"
-        },
-        "TargetGalactic":{
-          "viewType": "XML",
-          "viewId": "Galactic",
-          "viewName": "Galactic"
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ObjectPage.view.ObjectPage": {
+            "controllerName": "galacticadventurefrontend.ext.controller.ObjectPageExtension"
+          }
         }
       }
-    },
-    "rootView": {
-      "viewName": "galacticadventurefrontend.view.App",
-      "type": "XML",
-      "id": "App",
-      "async": true
     }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
   }
 }
