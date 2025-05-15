@@ -1,3 +1,15 @@
 ID,name,stardustCollection,wormholeNavigationSkill,originPlanet,spacesuitColor,department_ID,position_ID
 e1f5a1aa-f44e-4d61-aabc-1a5bfe37d11f,John Stardust,100,80,Mars,Red,11111111-1111-1111-1111-111111111111,aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 5a52dd91-9b38-4305-bc09-87d678aad672,Ana Nebula,200,95,Venus,Blue,22222222-2222-2222-2222-222222222222,bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbbb
+ac7bcd20-88f2-11ec-a8a3-0242ac120002,Luke Meteor,150,88,Jupiter,Orange,11111111-1111-1111-1111-111111111111,aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+ac7bd02e-88f2-11ec-a8a3-0242ac120003,Leia Comet,175,90,Earth,Green,22222222-2222-2222-2222-222222222222,bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbbb
+ac7bd170-88f2-11ec-a8a3-0242ac120004,Han Orbit,120,70,Saturn,Black,11111111-1111-1111-1111-111111111111,aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+ac7bd2b2-88f2-11ec-a8a3-0242ac120005,Rey Starfield,210,98,Mercury,Purple,22222222-2222-2222-2222-222222222222,bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbbb
+ac7bd3ee-88f2-11ec-a8a3-0242ac120006,Finn Galaxy,160,75,Uranus,Yellow,11111111-1111-1111-1111-111111111111,aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+ac7bd52a-88f2-11ec-a8a3-0242ac120007,Poe Nova,180,82,Neptune,Cyan,22222222-2222-2222-2222-222222222222,bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbbb
+ac7bd666-88f2-11ec-a8a3-0242ac120008,Ben Skyflare,140,65,Pluto,White,11111111-1111-1111-1111-111111111111,aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+ac7bd7a2-88f2-11ec-a8a3-0242ac120009,Rose Quantum,190,91,Mars,Red,22222222-2222-2222-2222-222222222222,bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbbb
+ac7bd8de-88f2-11ec-a8a3-0242ac12000a,Cassian Hyperdrive,135,72,Venus,Blue,11111111-1111-1111-1111-111111111111,aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+ac7bda1a-88f2-11ec-a8a3-0242ac12000b,Ezra Eclipse,145,78,Jupiter,Orange,22222222-2222-2222-2222-222222222222,bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbbb
+ac7bdb56-88f2-11ec-a8a3-0242ac12000c,Hera Solar,155,83,Earth,Green,11111111-1111-1111-1111-111111111111,aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+ac7bdc92-88f2-11ec-a8a3-0242ac12000d,Kanan Photon,165,85,Saturn,Black,22222222-2222-2222-2222-222222222222,bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbbb

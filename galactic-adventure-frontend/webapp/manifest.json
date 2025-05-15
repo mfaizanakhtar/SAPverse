@@ -53,7 +53,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.135.0",
       "libs": {
@@ -147,26 +147,8 @@
             "settings": {
               "editableHeaderContent": false,
               "createMode": "External",
-              "contextPath": "/Spacefarers",
-              "content":{
-                "header":{
-                  "actions":{
-                    "BackToList":{
-                      "text":"{i18n>backToList}"
-                    }
-                  }
-                }
-              }
+              "contextPath": "/Spacefarers"
             }
-          }
-        }
-      }
-    },
-    "extends": {
-      "extensions": {
-        "sap.ui.controllerExtensions": {
-          "sap.fe.templates.ObjectPage.view.ObjectPage": {
-            "controllerName": "galacticadventurefrontend.ext.controller.ObjectPageExtension"
           }
         }
       }

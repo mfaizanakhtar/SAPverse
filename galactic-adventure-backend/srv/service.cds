@@ -20,13 +20,26 @@ service SpaceService {
         { Value: stardustCollection, Label: 'Stardust Collection' },
         { Value: wormholeNavigationSkill, Label: 'Wormhole Navigation Skill' },
         { Value: originPlanet, Label: 'Origin Planet' },
-        { Value: spacesuitColor, Label: 'Spacesuit Color' }
+        { Value: spacesuitColor, Label: 'Spacesuit Color' },
+        { Value: position_title, Label: 'Position Title' },
+        { Value: department_name, Label: 'Department Name' }
       ]
     }
   )
   @odata.draft.enabled
-  entity Spacefarers as projection on g.Spacefarer
-}
+  entity Spacefarers as projection on g.Spacefarer {
+    ID,
+    name,
+    stardustCollection,
+    wormholeNavigationSkill,
+    originPlanet,
+    spacesuitColor,
+    position: redirected to g.Position,
+    department: redirected to g.Department,
+    position.title as position_title,
+    department.name as department_name
+  };
+  }
 
 annotate SpaceService.Spacefarers with @(
   UI.PresentationVariant: {
